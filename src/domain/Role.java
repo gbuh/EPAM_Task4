@@ -1,7 +1,7 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public enum Role {
     ADMIN      (0, "Администратор"),
@@ -23,11 +23,11 @@ public enum Role {
     public String getName() {
         return name;
     }
-/*
+
     public Long getId() {
         return Long.valueOf(ordinal());
     }
-*/
+/*
     public static List<Role> employees() {
         List<Role> roles = new ArrayList<>();
         for(Role role : values()) {
@@ -37,4 +37,5 @@ public enum Role {
         }
         return roles;
     }
+*/
 }

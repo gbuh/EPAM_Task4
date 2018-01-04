@@ -4,7 +4,7 @@ public class User extends Entity {
     private String login;
     private String password;
     private String lastName;
-    private String fistName;
+    private String firstName;
     private String middleName;
     private Role role;
 
@@ -32,12 +32,12 @@ public class User extends Entity {
         this.lastName = lastName;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String fistName) {
+        this.firstName = fistName;
     }
 
     public String getMiddleName() {

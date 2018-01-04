@@ -1,8 +1,9 @@
 package domain;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
-public abstract class Entity implements Serializable {
+//public abstract class Entity implements Serializable {
+public abstract class Entity{
     private Long id;
 
     public Long getId() {

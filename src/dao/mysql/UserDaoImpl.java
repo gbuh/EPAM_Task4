@@ -15,7 +15,7 @@ import domain.User;
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     @Override
     public User read(Long id) throws DaoException {
-        String sql = "SELECT `login`, `password`, `role` FROM `user` WHERE `id` = ?";
+        String sql = "SELECT `login`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user` WHERE `user_id` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -28,6 +28,9 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setId(id);
                 user.setLogin(resultSet.getString("login"));
                 user.setPassword(resultSet.getString("password"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setMiddleName(resultSet.getString("middle_name"));
                 user.setRole(Role.values()[resultSet.getInt("role")]);
             }
             return user;
@@ -41,7 +44,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public User readByLogin(String login) throws DaoException {
-        String sql = "SELECT `id`, `password`, `role` FROM `user` WHERE `login` = ?";
+        String sql = "SELECT `user_id`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user` WHERE `login` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -51,9 +54,12 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             User user = null;
             if(resultSet.next()) {
                 user = new User();
-                user.setId(resultSet.getLong("id"));
+                user.setId(resultSet.getLong("user_id"));
                 user.setLogin(login);
                 user.setPassword(resultSet.getString("password"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setMiddleName(resultSet.getString("middle_name"));
                 user.setRole(Role.values()[resultSet.getInt("role")]);
             }
             return user;
@@ -67,7 +73,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public List<User> readAll() throws DaoException {
-        String sql = "SELECT `id`, `login`, `password`, `role` FROM `user`";
+        String sql = "SELECT `user_id`, `login`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user`";
         Statement statement = null;
         ResultSet resultSet = null;
         try {
@@ -76,9 +82,12 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             List<User> users = new ArrayList<>();
             while(resultSet.next()) {
                 User user = new User();
-                user.setId(resultSet.getLong("id"));
+                user.setId(resultSet.getLong("user_id"));
                 user.setLogin(resultSet.getString("login"));
                 user.setPassword(resultSet.getString("password"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setMiddleName(resultSet.getString("middle_name"));
                 user.setRole(Role.values()[resultSet.getInt("role")]);
                 users.add(user);
             }
@@ -92,8 +101,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean isUserDistributesRequests(Long id) throws DaoException {
-        String sql = "SELECT COUNT(*) AS `count` FROM (SELECT `id` FROM `transfer` WHERE `operator_id` = ? LIMIT 1) AS `t`";
+    public boolean isUserExecutionsRequests(Long id) throws DaoException {
+        String sql = "SELECT COUNT(*) AS `count` FROM (SELECT `request_id` FROM `request` WHERE `driver_id` = ? LIMIT 1) AS `t`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -115,14 +124,17 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public Long create(User user) throws DaoException {
-        String sql = "INSERT INTO `user` (`login`, `password`, `role`) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO `user` (`login`, `password`, `last_name`, `first_name`, `middle_name`, `role`) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             statement = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());
-            statement.setInt(3, user.getRole().ordinal());
+            statement.setString(3, user.getLastName());
+            statement.setString(4, user.getFirstName());
+            statement.setString(5, user.getMiddleName());
+            statement.setInt(6, user.getRole().ordinal());
             statement.executeUpdate();
             Long id = null;
             resultSet = statement.getGeneratedKeys();
@@ -140,14 +152,17 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public void update(User user) throws DaoException {
-        String sql = "UPDATE `user` SET `login` = ?, `password` = ?, `role` = ? WHERE `id` = ?";
+        String sql = "UPDATE `user` SET `login` = ?, `password` = ?, `last_name` = ?, `first_name` = ?, `middle_name` = ?, `role` = ? WHERE `user_id` = ?";
         PreparedStatement statement = null;
         try {
             statement = getConnection().prepareStatement(sql);
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());
-            statement.setInt(3, user.getRole().ordinal());
-            statement.setLong(4, user.getId());
+            statement.setString(3, user.getLastName());
+            statement.setString(4, user.getFirstName());
+            statement.setString(5, user.getMiddleName());
+            statement.setInt(6, user.getRole().ordinal());
+            statement.setLong(7, user.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
             throw new DaoException(e);
@@ -158,7 +173,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public void delete(Long id) throws DaoException {
-        String sql = "DELETE FROM `user` WHERE `id` = ?";
+        String sql = "DELETE FROM `user` WHERE `user_id` = ?";
         PreparedStatement statement = null;
         try {
             statement = getConnection().prepareStatement(sql);

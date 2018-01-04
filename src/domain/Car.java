@@ -29,11 +29,11 @@ public class Car extends Entity{
     public void setCarrying(byte carrying) {
         this.carrying = carrying;
     }
-    
+
     public Condition getCondition() {
         return condition;
     }
-    
+
     public void setCondition(Condition condition) {
         this.condition = condition;
     }

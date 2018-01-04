@@ -9,5 +9,5 @@ public interface UserDao extends Dao<User> {
 
     User readByLogin(String login) throws DaoException;
 
-    boolean isUserDistributesRequests(Long id) throws DaoException;
+    boolean isUserExecutionsRequests(Long id) throws DaoException;
 }
