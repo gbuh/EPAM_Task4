@@ -33,6 +33,8 @@ public class UserEditController extends HttpServlet {
                 service.setUserDao(dao);
                 User user = service.findById(id);
                 req.setAttribute("user", user);
+                boolean userCanBeDeleted = service.canDelete(id);
+                req.setAttribute("userCanBeDeleted", userCanBeDeleted);
             } catch(SQLException | ServiceException e) {
                 throw new ServletException(e);
             } finally {

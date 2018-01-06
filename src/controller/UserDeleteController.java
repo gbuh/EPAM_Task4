@@ -10,27 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.mysql.UserDaoImpl;
-import domain.Role;
-import domain.User;
 import service.ServiceException;
 import service.logic.UserServiceImpl;
 import util.Connector;
 
-public class UserSaveController extends HttpServlet {
+public class UserDeleteController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User();
+        Long id = null;
         try {
-            user.setId(Long.parseLong(req.getParameter("id")));
+            id = Long.parseLong(req.getParameter("id"));
         } catch(NumberFormatException e) {}
-        user.setLogin(req.getParameter("login"));
-        user.setLastName(req.getParameter("last_name"));
-        user.setFirstName(req.getParameter("first_name"));
-        user.setMiddleName(req.getParameter("middle_name"));
-        try {
-            user.setRole(Role.values()[Integer.parseInt(req.getParameter("role"))]);
-        } catch(NumberFormatException | ArrayIndexOutOfBoundsException e) {}
-        if(user.getLogin() != null && user.getRole() != null) {
+        if(id != null) {
             Connection connection = null;
             try {
                 connection = Connector.getConnection();
@@ -38,8 +29,7 @@ public class UserSaveController extends HttpServlet {
                 dao.setConnection(connection);
                 UserServiceImpl service = new UserServiceImpl();
                 service.setUserDao(dao);
-                service.setDefaultPassword("12345");
-                service.save(user);
+                service.delete(id);
             } catch(SQLException | ServiceException e) {
                 throw new ServletException(e);
             } finally {
