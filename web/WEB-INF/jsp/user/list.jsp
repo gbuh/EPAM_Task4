@@ -28,7 +28,7 @@
                     <td class="content">${user.lastName}</td>
                     <td class="content">${user.firstName}</td>
                     <td class="content">${user.middleName}</td>
-                    <td class="content">${user.role}</td>
+                    <td class="content">${user.role.name}</td>
                     <td class="empty">
                         <c:url var="urlUserEdit" value="/user/edit.html">
                             <c:param name="id" value="${user.id}"/>
