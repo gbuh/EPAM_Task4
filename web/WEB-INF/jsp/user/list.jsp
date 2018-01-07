@@ -4,15 +4,18 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<u:html title="Список пользователей">
-    <h2>Список пользователей</h2>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<fmt:message key="user.list.title" var="title"/>
+<u:html title="${title}">
+    <h2>${title}</h2>
     <table>
         <tr>
-            <th>Логин</th>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Отчество</th>
-            <th>Роль</th>
+            <th><fmt:message key="user.list.table.login"/></th>
+            <th><fmt:message key="user.list.table.lastName"/></th>
+            <th><fmt:message key="user.list.table.firstName"/></th>
+            <th><fmt:message key="user.list.table.middleName"/></th>
+            <th><fmt:message key="user.list.table.role"/></th>
             <td>&nbsp;</td>
         </tr>
         <c:forEach var="user" items="${users}">
@@ -21,7 +24,7 @@
                 <td class="content">${user.lastName}</td>
                 <td class="content">${user.firstName}</td>
                 <td class="content">${user.middleName}</td>
-                <td class="content">${user.role.name}</td>
+                <td class="content"><fmt:message key="${user.role.name}"/></td>
                 <td class="empty">
                     <c:url var="urlUserEdit" value="/user/edit.html">
                         <c:param name="id" value="${user.id}"/>
@@ -32,5 +35,5 @@
         </c:forEach>
     </table>
     <c:url var="urlUserEdit" value="/user/edit.html"/>
-    <a href="${urlUserEdit}" class="add-button">Добавить</a>
+    <a href="${urlUserEdit}" class="add-button"><fmt:message key="user.list.button.add"/></a>
 </u:html>

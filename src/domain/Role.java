@@ -4,9 +4,9 @@ package domain;
 //import java.util.List;
 
 public enum Role {
-    ADMIN      (0, "Администратор"),
-    DISPATCHER (1, "Диспетчер"),
-    DRIVER     (2, "Водитель");
+    ADMIN      (0, "role.admin"),
+    DISPATCHER (1, "role.dispatcher"),
+    DRIVER     (2, "role.driver");
 
     private int index;
     private String name;

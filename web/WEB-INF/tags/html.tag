@@ -4,6 +4,8 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +15,8 @@
         <link href="${urlCss}" rel="stylesheet">
     </head>
     <body>
-        <h1>Система «Автобаза»</h1>
+        <fmt:message key="application.title" var="appTitle"/>
+        <h1>${appTitle}</h1>
         <jsp:doBody/>
     </body>
 </html>
