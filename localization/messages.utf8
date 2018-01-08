@@ -1,4 +1,4 @@
-application.title=Bank “Horn & Hooves”
+application.title=System “Motor Depot”
 
 role.admin=Administrator
 role.dispatcher=Dispatcher
@@ -7,7 +7,7 @@ role.driver=Driver
 user.list.title=List of users
 user.list.table.login=User login
 user.list.table.lastName=User last name
-user.list.table.fistName=User first name
+user.list.table.firstName=User first name
 user.list.table.middleName=User middle name
 user.list.table.role=User role
 user.list.button.add=Add
@@ -16,7 +16,7 @@ user.edit.title.edit=Edit user information
 user.edit.title.add=Add new user
 user.edit.form.login=User login
 user.edit.form.lastName=User last name
-user.edit.form.fistName=User first name
+user.edit.form.firstName=User first name
 user.edit.form.middleName=User middle name
 user.edit.form.role=User role
 user.edit.button.save=Save
