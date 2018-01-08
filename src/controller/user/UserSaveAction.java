@@ -1,24 +1,22 @@
-package controller;
+package controller.user;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.mysql.UserDaoImpl;
+import controller.Action;
+import controller.Forward;
 import domain.Role;
 import domain.User;
 import service.ServiceException;
-import service.logic.UserServiceImpl;
-import util.Connector;
+import service.UserService;
+import util.FactoryException;
 
-public class UserSaveController extends HttpServlet {
+public class UserSaveAction extends Action {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User();
         req.setCharacterEncoding("UTF-8");
         try {
@@ -32,21 +30,13 @@ public class UserSaveController extends HttpServlet {
             user.setRole(Role.values()[Integer.parseInt(req.getParameter("role"))]);
         } catch(NumberFormatException | ArrayIndexOutOfBoundsException e) {}
         if(user.getLogin() != null && user.getRole() != null) {
-            Connection connection = null;
             try {
-                connection = Connector.getConnection();
-                UserDaoImpl dao = new UserDaoImpl();
-                dao.setConnection(connection);
-                UserServiceImpl service = new UserServiceImpl();
-                service.setUserDao(dao);
-                service.setDefaultPassword("12345");
+                UserService service = getServiceFactory().getUserService();
                 service.save(user);
-            } catch(SQLException | ServiceException e) {
+            } catch(FactoryException | ServiceException e) {
                 throw new ServletException(e);
-            } finally {
-                try { connection.close(); } catch(Exception e) {}
             }
         }
-        resp.sendRedirect(req.getContextPath() + "/user/list.html");
+        return new Forward("/user/list.html");
     }
 }
