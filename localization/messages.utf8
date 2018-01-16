@@ -4,6 +4,10 @@ role.admin=Administrator
 role.dispatcher=Dispatcher
 role.driver=Driver
 
+status.done=Done
+status.execution=Execution
+status.accept=Accept
+
 user.list.title=List of users
 user.list.table.login=User login
 user.list.table.lastName=User last name
@@ -23,3 +27,13 @@ user.edit.button.save=Save
 user.edit.button.delete=Delete
 user.edit.button.reset=Reset
 user.edit.button.cancel=Cancel
+
+request.list.title=List of requests
+request.list.table.description=Description
+request.list.table.status=Status
+request.list.button.add=Add
+
+request.view.title=Request information
+request.view.table.description=Description
+request.view.table.status=Status
+request.view.button.edit=Edit

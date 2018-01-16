@@ -1,6 +1,6 @@
 package domain;
 
-public class Request {
+public class Request extends Entity {
     private Long driverId;
     private String description;
     private Status status;

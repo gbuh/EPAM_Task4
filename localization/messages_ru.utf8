@@ -4,6 +4,9 @@ role.admin=Администратор
 role.dispatcher=Диспетчер
 role.driver=Водитель
 
+status.done=Выполнена
+status.execution=На исполнении
+status.accept=Принята
 
 user.list.title=Список пользователей
 user.list.table.login=Логин
@@ -24,3 +27,13 @@ user.edit.button.save=Сохранить
 user.edit.button.delete=Удалить
 user.edit.button.reset=Сброс
 user.edit.button.cancel=Отмена
+
+request.list.title=Список заявок
+request.list.table.description=Описание
+request.list.table.status=Статус
+request.list.button.add=Добавить
+
+request.view.title=Информация по заявке
+request.view.table.description=Описание
+request.view.table.status=Статус
+request.view.button.edit=Редактировать

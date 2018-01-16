@@ -8,4 +8,6 @@
     <h2>Стартовая страница</h2>
     <c:url var="userList" value="/user/list.html"/>
     <p><a href="${userList}">Список пользователей</a></p>
+    <c:url var="requestList" value="/request/list.html"/>
+    <p><a href="${requestList}">Список заявок</a></p>
 </u:html>

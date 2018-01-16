@@ -1,8 +1,9 @@
 package domain;
 
 public enum Status {
-    DONE      (0, "Выполнена"),
-    EXECUTION (1, "На исполнении");
+    DONE      (0, "status.done"),
+    EXECUTION (1, "status.execution"),
+    ACCEPT    (2, "status.accept");
 
     private int index;
     private String name;
