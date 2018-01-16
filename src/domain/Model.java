@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * Type model enumeration
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public enum Model {
     AUTOMOBILE (0, "Легковой автомобиль"),
     TRUCK      (1, "Грузовой автомобиль"),

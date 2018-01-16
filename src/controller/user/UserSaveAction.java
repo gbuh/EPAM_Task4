@@ -16,7 +16,8 @@ import util.FactoryException;
 
 public class UserSaveAction extends Action {
     @Override
-    public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public Forward execute(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         User user = new User();
         req.setCharacterEncoding("UTF-8");
         try {

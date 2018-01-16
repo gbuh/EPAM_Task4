@@ -15,7 +15,8 @@ import domain.User;
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     @Override
     public User read(Long id) throws DaoException {
-        String sql = "SELECT `login`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user` WHERE `user_id` = ?";
+        String sql = "SELECT `login`, `password`, `last_name`, `first_name`,"
+                + " `middle_name`, `role` FROM `user` WHERE `user_id` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -44,7 +45,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public User readByLogin(String login) throws DaoException {
-        String sql = "SELECT `user_id`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user` WHERE `login` = ?";
+        String sql = "SELECT `user_id`, `password`, `last_name`, `first_name`,"
+                + " `middle_name`, `role` FROM `user` WHERE `login` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -73,7 +75,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public List<User> readAll() throws DaoException {
-        String sql = "SELECT `user_id`, `login`, `password`, `last_name`, `first_name`, `middle_name`, `role` FROM `user`";
+        String sql = "SELECT `user_id`, `login`, `password`, `last_name`,"
+                + " `first_name`, `middle_name`, `role` FROM `user`";
         Statement statement = null;
         ResultSet resultSet = null;
         try {
@@ -102,7 +105,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public boolean isUserExecutionsRequests(Long id) throws DaoException {
-        String sql = "SELECT COUNT(*) AS `count` FROM (SELECT `request_id` FROM `request` WHERE `driver_id` = ? LIMIT 1) AS `t`";
+        String sql = "SELECT COUNT(*) AS `count` FROM (SELECT `request_id`"
+                + " FROM `request` WHERE `driver_id` = ? LIMIT 1) AS `t`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -124,7 +128,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public Long create(User user) throws DaoException {
-        String sql = "INSERT INTO `user` (`login`, `password`, `last_name`, `first_name`, `middle_name`, `role`) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO `user` (`login`, `password`, `last_name`,"
+                + " `first_name`, `middle_name`, `role`) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -152,7 +157,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public void update(User user) throws DaoException {
-        String sql = "UPDATE `user` SET `login` = ?, `password` = ?, `last_name` = ?, `first_name` = ?, `middle_name` = ?, `role` = ? WHERE `user_id` = ?";
+        String sql = "UPDATE `user` SET `login` = ?, `password` = ?, `last_name` = ?,"
+                + " `first_name` = ?, `middle_name` = ?, `role` = ? WHERE `user_id` = ?";
         PreparedStatement statement = null;
         try {
             statement = getConnection().prepareStatement(sql);

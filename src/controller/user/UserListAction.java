@@ -16,7 +16,8 @@ import util.FactoryException;
 
 public class UserListAction extends Action {
     @Override
-    public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public Forward execute(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         try {
             UserService service = getServiceFactory().getUserService();
             List<User> users = service.findAll();

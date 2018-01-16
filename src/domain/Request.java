@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * This class describes the Request entity
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public class Request extends Entity {
     private Long driverId;
     private String description;

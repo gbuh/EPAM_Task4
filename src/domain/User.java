@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * This class describes the User entity
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public class User extends Entity {
     private String login;
     private String password;
@@ -9,19 +15,19 @@ public class User extends Entity {
     private Role role;
 
     public String getLogin() {
-            return login;
+        return login;
     }
 
     public void setLogin(String login) {
-            this.login = login;
+        this.login = login;
     }
 
     public String getPassword() {
-            return password;
+        return password;
     }
 
     public void setPassword(String password) {
-            this.password = password;
+        this.password = password;
     }
 
     public String getLastName() {
@@ -49,10 +55,10 @@ public class User extends Entity {
     }
 
     public Role getRole() {
-            return role;
+        return role;
     }
 
     public void setRole(Role role) {
-            this.role = role;
+        this.role = role;
     }
 }

@@ -47,7 +47,8 @@ public class UserServiceImpl implements UserService {
                 User storedUser = userDao.read(user.getId());
                 if(storedUser != null) {
                     user.setPassword(storedUser.getPassword());
-                    if(storedUser.getLogin().equals(user.getLogin()) || userDao.readByLogin(user.getLogin()) == null) {
+                    if(storedUser.getLogin().equals(user.getLogin())
+                            || userDao.readByLogin(user.getLogin()) == null) {
                         userDao.update(user);
                     } else {
                         throw new UserLoginNotUniqueException(user.getLogin());

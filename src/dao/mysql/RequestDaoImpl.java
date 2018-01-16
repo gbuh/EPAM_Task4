@@ -63,6 +63,7 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
         }
     }
 
+    @SuppressWarnings({ "resource", "null" })
     @Override
     public Long create(Request request) throws DaoException {
         String sql = "INSERT INTO `request` (`description`, `status`) VALUES (?, ?)";

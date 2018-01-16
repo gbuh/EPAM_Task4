@@ -1,0 +1,1 @@
+DROP DATABASE IF EXISTS `motor_depot_db`;

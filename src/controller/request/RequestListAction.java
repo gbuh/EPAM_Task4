@@ -16,7 +16,8 @@ import util.FactoryException;
 
 public class RequestListAction extends Action {
     @Override
-    public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public Forward execute(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         try {
             RequestService service = getServiceFactory().getRequestService();
             List<Request> requests = service.findAll();

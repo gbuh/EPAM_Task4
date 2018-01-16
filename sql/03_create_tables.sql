@@ -1,7 +1,3 @@
-﻿DROP DATABASE IF EXISTS `motor_depot_db`; 
-
-CREATE DATABASE `motor_depot_db` DEFAULT CHARACTER SET utf8; 
-
 USE `motor_depot_db`; 
 
 CREATE TABLE `user` (
@@ -40,21 +36,3 @@ CREATE TABLE `request` (
     PRIMARY KEY (`request_id`),
     FOREIGN KEY (`driver_id`) REFERENCES `driver` (`driver_id`) ON UPDATE RESTRICT ON DELETE RESTRICT
 )  ENGINE=INNODB DEFAULT CHARACTER SET = UTF8;
-
-INSERT INTO `user` VALUES 
-(1,'администратор1','12345','Петров',  'Петр',  'Петрович',  0), 
-(2,'водитель1',     '12345','Иванов',  'Иван',  'Иванович',  2), 
-(3,'диспетчер1',    '12345','Сидоров', 'Сергей','Николаевич',1), 
-(4,'водитель2',     '12345','Алексеев','Андрей','Сергеевич', 2);
-
-INSERT INTO `car` VALUES 
-(1,0,2,   NULL,0), 
-(2,1,NULL,3,   1);
-
-INSERT INTO `driver` VALUES 
-(1,1), 
-(2,2);
-
-INSERT INTO `request` VALUES 
-(1,1,'Витебск-Минск',0), 
-(2,2,'Витебск-Москва',1);

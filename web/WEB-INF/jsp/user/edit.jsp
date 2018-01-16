@@ -40,9 +40,13 @@
         <button class="save"><fmt:message key="user.edit.button.save"/></button>
         <c:if test="${not empty user.id}">
             <c:if test="${not userCanBeDeleted}"><c:set var="disabled" value="disabled"/></c:if>
-            <button class="delete" formaction="${urlUserDelete}" formmethod="post" ${disabled}><fmt:message key="user.edit.button.delete"/></button>
+            <button class="delete" formaction="${urlUserDelete}" formmethod="post" ${disabled}>
+                <fmt:message key="user.edit.button.delete"/>
+            </button>
         </c:if>
         <button class="reset" type="reset"><fmt:message key="user.edit.button.reset"/></button>
-        <button class="back" formaction="${urlUserList}" formmethod="get"><fmt:message key="user.edit.button.cancel"/></button>
+        <button class="back" formaction="${urlUserList}" formmethod="get">
+            <fmt:message key="user.edit.button.cancel"/>
+        </button>
     </form>
 </u:html>

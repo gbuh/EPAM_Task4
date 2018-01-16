@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
 <project name="MotorDepot" basedir=".">
-    <!-- importing of properties file (rename "properties.default.xml" to ".properties.xml" and change settings) -->
+    <!-- importing of properties file -->
     <import file="properties.default.xml" />
 
     <!-- MySQL connection properties -->
-    <property name="mysql-jdbc" value="jdbc:mysql://${mysql-host}:${mysql-port}?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+    <property name="mysql-jdbc" value="jdbc:mysql://${mysql-host}:${mysql-port}
+        ?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
 
     <!-- Tomcat connection properties -->
     <property name="tomcat-bin" value="${tomcat}/bin" />

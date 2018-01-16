@@ -12,22 +12,28 @@ import util.MainServiceFactoryImpl;
 import util.ServiceFactory;
 
 public class DispatcherServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     @Override
     public void init() throws ServletException {
         try {
-            Connector.init("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/motor_depot_db?useSSL=true&useUnicode=true&characterEncoding=UTF-8", "root", "root");
+            Connector.init("com.mysql.jdbc.Driver",
+                "jdbc:mysql://localhost/motor_depot_db?useSSL=true"
+                    + "&useUnicode=true&characterEncoding=UTF-8", "root", "root");
         } catch(ClassNotFoundException e) {
             throw new ServletException(e);
         }
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         process(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         process(req, resp);
     }
 
@@ -35,7 +41,8 @@ public class DispatcherServlet extends HttpServlet {
         return new MainServiceFactoryImpl();
     }
 
-    private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void process(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String url = req.getRequestURI();
         String context = req.getContextPath();
         int postfixIndex = url.lastIndexOf(".html");

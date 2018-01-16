@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * This class describes the Car entity
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public class Car extends Entity{
     private Model model;
     private byte places;

@@ -1,8 +1,11 @@
 package domain;
 
-//import java.io.Serializable;
-
-//public abstract class Entity implements Serializable {
+/**
+ * This class describes the base entity 
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public abstract class Entity{
     private Long id;
 

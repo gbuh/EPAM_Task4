@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * Type status enumeration
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public enum Status {
     DONE      (0, "status.done"),
     EXECUTION (1, "status.execution"),

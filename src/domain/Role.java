@@ -1,8 +1,11 @@
 package domain;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
+/**
+ * Type role enumeration
+ * 
+ * @version 1.0 15 Jan 2018
+ * @author  Igor Lipko
+ */
 public enum Role {
     ADMIN      (0, "role.admin"),
     DISPATCHER (1, "role.dispatcher"),
@@ -27,15 +30,4 @@ public enum Role {
     public Long getId() {
         return Long.valueOf(ordinal());
     }
-/*
-    public static List<Role> employees() {
-        List<Role> roles = new ArrayList<>();
-        for(Role role : values()) {
-            if(role == ADMIN) {
-                roles.add(role);
-            }
-        }
-        return roles;
-    }
-*/
 }

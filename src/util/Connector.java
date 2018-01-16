@@ -9,7 +9,8 @@ public class Connector {
     private static String jdbcUser;
     private static String jdbcPassword;
 
-    public static void init(String jdbcDriver, String jdbcUrl, String jdbcUser, String jdbcPassword) throws ClassNotFoundException {
+    public static void init(String jdbcDriver, String jdbcUrl, String jdbcUser, String jdbcPassword)
+            throws ClassNotFoundException {
         Class.forName(jdbcDriver);
         Connector.jdbcUrl = jdbcUrl;
         Connector.jdbcUser = jdbcUser;

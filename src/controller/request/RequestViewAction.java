@@ -15,7 +15,8 @@ import util.FactoryException;
 
 public class RequestViewAction extends Action {
     @Override
-    public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public Forward execute(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         try {
             Long id = Long.parseLong(req.getParameter("id"));
             RequestService service = getServiceFactory().getRequestService();
