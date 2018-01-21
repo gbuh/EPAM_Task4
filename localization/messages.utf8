@@ -34,6 +34,7 @@ request.list.table.status=Status
 request.list.button.add=Add
 
 request.view.title=Request information
+request.view.table.id=Request number
 request.view.table.description=Description
 request.view.table.status=Status
 request.view.button.edit=Edit

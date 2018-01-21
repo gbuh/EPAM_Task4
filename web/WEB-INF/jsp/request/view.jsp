@@ -11,6 +11,10 @@
     <h2>${title}</h2>
     <table>
         <tr>
+            <th><fmt:message key="request.view.table.id"/></th>
+            <td class="content">${request.id}</td>
+        </tr>
+        <tr>
             <th><fmt:message key="request.view.table.description"/></th>
             <td class="content">${request.description}</td>
         </tr>

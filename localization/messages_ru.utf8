@@ -34,6 +34,7 @@ request.list.table.status=Статус
 request.list.button.add=Добавить
 
 request.view.title=Информация по заявке
+request.view.table.id=Номер заявки
 request.view.table.description=Описание
 request.view.table.status=Статус
 request.view.button.edit=Редактировать
