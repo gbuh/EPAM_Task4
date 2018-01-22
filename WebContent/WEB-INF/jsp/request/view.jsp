@@ -19,6 +19,22 @@
             <td class="content">${request.description}</td>
         </tr>
         <tr>
+            <th><fmt:message key="request.view.table.driver"/></th>
+            <td class="content">${request.driverId}</td>
+        </tr>
+                <tr>
+            <th><fmt:message key="request.view.table.carModel"/></th>
+            <td class="content"><fmt:message key="${car.model.name}"/></td>
+        </tr>
+        <tr>
+            <th><fmt:message key="request.view.table.carPlaces"/></th>
+            <td class="content">${car.places}</td>
+        </tr>
+        <tr>
+            <th><fmt:message key="request.view.table.carCarrying"/></th>
+            <td class="content">${car.carrying}</td>
+        </tr>
+        <tr>
             <th><fmt:message key="request.view.table.status"/></th>
             <td class="content"><fmt:message key="${request.status.name}"/></td>
         </tr>

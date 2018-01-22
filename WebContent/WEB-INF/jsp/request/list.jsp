@@ -11,13 +11,17 @@
     <h2>${title}</h2>
     <table>
         <tr>
+            <th><fmt:message key="request.list.table.id"/></th>
             <th><fmt:message key="request.list.table.description"/></th>
+            <th><fmt:message key="request.list.table.driver"/></th>
             <th><fmt:message key="request.list.table.status"/></th>
             <td>&nbsp;</td>
         </tr>
         <c:forEach var="request" items="${requests}">
             <tr>
+                <td class="content">${request.id}</td>
                 <td class="content">${request.description}</td>
+                <td class="content">${request.driverId}</td>
                 <td class="content"><fmt:message key="${request.status.name}"/></td>
                 <td class="empty">
                     <c:url var="urlRequestView" value="/request/view.html">

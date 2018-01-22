@@ -17,7 +17,7 @@
     <target name="init data base">
         <sql driver="com.mysql.jdbc.Driver" url="${mysql-jdbc}" userid="${mysql-user}" password="${mysql-password}" encoding="utf8">
             <classpath>
-                <pathelement location="web/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" />
+                <pathelement location="WebContent/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" />
             </classpath>
             <sort>
                 <fileset dir="db" includes="*.sql" />
@@ -30,7 +30,7 @@
     <target name="init">
         <native2ascii encoding="UTF-8"
             src="localization"
-            dest="web/WEB-INF/classes"
+            dest="WebContent/WEB-INF/classes"
             includes="**/*.utf8" ext=".properties"/>
     </target>
 

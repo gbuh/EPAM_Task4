@@ -29,12 +29,18 @@ user.edit.button.reset=Сброс
 user.edit.button.cancel=Отмена
 
 request.list.title=Список заявок
+request.list.table.id=Номер заявки
 request.list.table.description=Описание
+request.list.table.driver=Водитель
 request.list.table.status=Статус
 request.list.button.add=Добавить
 
 request.view.title=Информация по заявке
 request.view.table.id=Номер заявки
 request.view.table.description=Описание
+request.view.table.driver=Водитель
+request.view.table.carModel=Модель автотранспорта
+request.view.table.carPlaces=Кол-во посадочных мест
+request.view.table.carCarrying=Грузоподъемность, тн
 request.view.table.status=Статус
 request.view.button.edit=Редактировать

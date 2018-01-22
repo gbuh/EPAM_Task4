@@ -15,7 +15,19 @@ import domain.Status;
 public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
     @Override
     public Request read(Long id) throws DaoException {
-        String sql = "SELECT `description`, `status` FROM `request` WHERE `request_id` = ?";
+        String sql = "SELECT request.request_id, " + 
+                "       request.driver_id," + 
+                "       request.description," + 
+                "       user.last_name," + 
+                "       CONCAT(user.last_name,' ',user.first_name,' ',user.middle_name) AS driverName," + 
+                "       car.model," + 
+                "       car.places," + 
+                "       car.carrying," + 
+                "       request.status" + 
+                "       FROM `request`" + 
+                "       INNER JOIN `user` ON user.user_id = request.driver_id" + 
+                "       INNER JOIN `driver` ON user.user_id = driver.driver_id" + 
+                "       INNER JOIN `car` ON car.car_id = driver.car_id WHERE request_id = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -27,6 +39,7 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                 request = new Request();
                 request.setId(id);
                 request.setDescription(resultSet.getString("description"));
+                request.setDriverId(resultSet.getLong("driver_id"));
                 request.setStatus(Status.values()[resultSet.getInt("status")]);
             }
             return request;
@@ -40,7 +53,7 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
 
     @Override
     public List<Request> readAll() throws DaoException {
-        String sql = "SELECT `request_id`, `description`, `status` FROM `request`";
+        String sql = "SELECT `request_id`, `driver_id`, `description`, `status` FROM `request`";
         Statement statement = null;
         ResultSet resultSet = null;
         try {
@@ -51,6 +64,7 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                 Request request = new Request();
                 request.setId(resultSet.getLong("request_id"));
                 request.setDescription(resultSet.getString("description"));
+                request.setDriverId(resultSet.getLong("driver_id"));
                 request.setStatus(Status.values()[resultSet.getInt("status")]);
                 requests.add(request);
             }

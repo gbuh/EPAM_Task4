@@ -29,12 +29,18 @@ user.edit.button.reset=Reset
 user.edit.button.cancel=Cancel
 
 request.list.title=List of requests
+request.list.table.id=Request number
 request.list.table.description=Description
+request.list.table.driver=Driver
 request.list.table.status=Status
 request.list.button.add=Add
 
 request.view.title=Request information
 request.view.table.id=Request number
 request.view.table.description=Description
+request.view.table.driver=Driver
+request.view.table.carModel=Auto Model
+request.view.table.carPlaces=Number of seats
+request.view.table.carCarrying=Carrying, ton
 request.view.table.status=Status
 request.view.button.edit=Edit
