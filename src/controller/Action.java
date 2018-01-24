@@ -19,5 +19,6 @@ abstract public class Action {
         this.serviceFactory = serviceFactory;
     }
 
-    abstract public Forward execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
+    abstract public Forward execute(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException;
 }

@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.servlet.ServletException;
 
 import controller.request.RequestViewAction;
+import controller.request.RequestEditAction;
+import controller.request.RequestSaveAction;
 import controller.request.RequestListAction;
 import controller.user.UserDeleteAction;
 import controller.user.UserEditAction;
@@ -23,6 +25,8 @@ public class ActionFactory {
         actions.put("/user/delete", UserDeleteAction.class);
         actions.put("/request/list", RequestListAction.class);
         actions.put("/request/view", RequestViewAction.class);
+        actions.put("/request/edit", RequestEditAction.class);
+        actions.put("/request/save", RequestSaveAction.class);
     }
 
     public static Action getAction(String url) throws ServletException {

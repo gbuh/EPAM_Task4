@@ -44,3 +44,13 @@ request.view.table.carPlaces=Кол-во посадочных мест
 request.view.table.carCarrying=Грузоподъемность, тн
 request.view.table.status=Статус
 request.view.button.edit=Редактировать
+
+request.edit.title.edit=Редактирование заявки
+request.edit.title.add=Добавление новой заявки
+request.edit.form.id=Номер заявки
+request.edit.form.description=Описание
+request.edit.form.driver=Водитель
+request.edit.form.status=Статус
+request.edit.button.save=Сохранить
+request.edit.button.reset=Сброс
+request.edit.button.cancel=Отмена

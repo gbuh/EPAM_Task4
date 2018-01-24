@@ -44,3 +44,13 @@ request.view.table.carPlaces=Number of seats
 request.view.table.carCarrying=Carrying, ton
 request.view.table.status=Status
 request.view.button.edit=Edit
+
+request.edit.title.edit=Edit request information
+request.edit.title.add=Add new request
+request.edit.form.id=Request number
+request.edit.form.description=Description
+request.edit.form.driver=Driver
+request.edit.form.status=Status
+request.edit.button.save=Save
+request.edit.button.reset=Reset
+request.edit.button.cancel=Cancel

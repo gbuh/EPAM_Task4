@@ -7,9 +7,9 @@ package domain;
  * @author  Igor Lipko
  */
 public enum Role {
-    ADMIN      (0, "role.admin"),
+    DRIVER     (0, "role.driver"),
     DISPATCHER (1, "role.dispatcher"),
-    DRIVER     (2, "role.driver");
+    ADMIN      (2, "role.admin");
 
     private int index;
     private String name;

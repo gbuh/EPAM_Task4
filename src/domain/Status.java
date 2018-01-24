@@ -7,9 +7,9 @@ package domain;
  * @author  Igor Lipko
  */
 public enum Status {
-    DONE      (0, "status.done"),
+    ACCEPT    (0, "status.accept"),
     EXECUTION (1, "status.execution"),
-    ACCEPT    (2, "status.accept");
+    DONE      (2, "status.done");
 
     private int index;
     private String name;
@@ -25,5 +25,9 @@ public enum Status {
 
     public String getName() {
         return name;
+    }
+
+    public Long getId() {
+        return Long.valueOf(ordinal());
     }
 }

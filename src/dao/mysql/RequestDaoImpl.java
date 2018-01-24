@@ -77,17 +77,16 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
         }
     }
 
-    @SuppressWarnings({ "resource", "null" })
     @Override
     public Long create(Request request) throws DaoException {
-        String sql = "INSERT INTO `request` (`description`, `status`) VALUES (?, ?)";
+        String sql = "INSERT INTO `request` (`driver_id`, `description`, `status`) VALUES (?, ?, ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             statement = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, request.getDescription());
-            request.setStatus(Status.values()[resultSet.getInt("status")]);
-            statement.setInt(2, request.getStatus().getIndex());
+            statement.setLong(1, request.getDriverId());
+            statement.setString(2, request.getDescription());
+            statement.setInt(3, request.getStatus().ordinal());
             statement.executeUpdate();
             Long id = null;
             resultSet = statement.getGeneratedKeys();
@@ -105,13 +104,14 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
 
     @Override
     public void update(Request request) throws DaoException {
-        String sql = "UPDATE `request` SET `description` = ?, `status` = ? WHERE `request_id` = ?";
+        String sql = "UPDATE `request` SET `driver_id` = ?, `description` = ?, `status` = ? WHERE `request_id` = ?";
         PreparedStatement statement = null;
         try {
             statement = getConnection().prepareStatement(sql);
-            statement.setString(1, request.getDescription());
-            statement.setInt(2, request.getStatus().getIndex());
-            statement.setLong(3, request.getId());
+            statement.setLong(1, request.getDriverId());
+            statement.setString(2, request.getDescription());
+            statement.setInt(3, request.getStatus().getIndex());
+            statement.setLong(4, request.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
             throw new DaoException(e);
