@@ -52,5 +52,6 @@ request.edit.form.description=Описание
 request.edit.form.driver=Водитель
 request.edit.form.status=Статус
 request.edit.button.save=Сохранить
+request.edit.button.delete=Удалить
 request.edit.button.reset=Сброс
 request.edit.button.cancel=Отмена

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 
+import controller.request.RequestDeleteAction;
 import controller.request.RequestViewAction;
 import controller.request.RequestEditAction;
 import controller.request.RequestSaveAction;
@@ -27,6 +28,7 @@ public class ActionFactory {
         actions.put("/request/view", RequestViewAction.class);
         actions.put("/request/edit", RequestEditAction.class);
         actions.put("/request/save", RequestSaveAction.class);
+        actions.put("/request/delete", RequestDeleteAction.class);
     }
 
     public static Action getAction(String url) throws ServletException {

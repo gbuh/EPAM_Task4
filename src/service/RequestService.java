@@ -10,4 +10,6 @@ public interface RequestService {
     Request findById(Long id) throws ServiceException;
 
     void save(Request request) throws ServiceException;
+
+    void delete(Long id) throws ServiceException;
 }

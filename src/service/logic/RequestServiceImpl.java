@@ -52,4 +52,13 @@ public class RequestServiceImpl implements RequestService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public void delete(Long id) throws ServiceException {
+        try {
+            requestDao.delete(id);
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }

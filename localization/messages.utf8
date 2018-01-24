@@ -52,5 +52,6 @@ request.edit.form.description=Description
 request.edit.form.driver=Driver
 request.edit.form.status=Status
 request.edit.button.save=Save
+request.edit.button.delete=Delete
 request.edit.button.reset=Reset
 request.edit.button.cancel=Cancel
