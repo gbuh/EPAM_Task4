@@ -1,4 +1,6 @@
 application.title=System “Motor Depot”
+application.welcome=Current user is
+application.button.logout=Log out
 
 role.admin=Administrator
 role.dispatcher=Dispatcher
@@ -7,6 +9,12 @@ role.driver=Driver
 status.done=Done
 status.execution=Execution
 status.accept=Accept
+
+login.title=Login page
+login.message=Username or password is incorrect. Registration required
+login.form.login=Username
+login.form.password=Password
+login.button.login=Log in
 
 user.list.title=List of users
 user.list.table.login=User login

@@ -1,4 +1,6 @@
 application.title=Система «Автобаза»
+application.welcome=Текущий пользователь
+application.button.logout=Выход
 
 role.admin=Администратор
 role.dispatcher=Диспетчер
@@ -7,6 +9,12 @@ role.driver=Водитель
 status.done=Выполнена
 status.execution=На исполнении
 status.accept=Принята
+
+login.title=Вход в систему
+login.message=Такого пользователя нет. Зарегистрируйтесь, чтобы войти 
+login.form.login=Имя пользователя
+login.form.password=Пароль
+login.button.login=Войти
 
 user.list.title=Список пользователей
 user.list.table.login=Логин

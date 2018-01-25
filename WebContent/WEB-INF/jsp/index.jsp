@@ -6,6 +6,8 @@
 
 <u:html title="Стартовая страница">
     <h2>Стартовая страница</h2>
+    <c:url var="login" value="/login.html"/>
+    <p><a href="${login}">Вход</a></p>
     <c:url var="userList" value="/user/list.html"/>
     <p><a href="${userList}">Список пользователей</a></p>
     <c:url var="requestList" value="/request/list.html"/>

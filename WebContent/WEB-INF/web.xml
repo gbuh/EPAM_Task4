@@ -6,7 +6,7 @@
 	version="3.1"
 	metadata-complete="true">
 
-	<display-name>Система «Автобаза»</display-name>
+    <display-name>Система «Автобаза»</display-name>
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
@@ -22,6 +22,15 @@
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+
+        <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>controller.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

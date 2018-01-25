@@ -10,7 +10,9 @@
 <c:choose>
     <c:when test="${not empty request.id}">
         <fmt:message var="title" key="request.edit.title.edit"/>
-        <c:url var="urlBack" value="/request/view.html"/>
+        <c:url var="urlBack" value="/request/view.html">
+            <c:param name="id" value="${request.id}"/>
+        </c:url>
     </c:when>
     <c:otherwise>
         <fmt:message var="title" key="request.edit.title.add"/>

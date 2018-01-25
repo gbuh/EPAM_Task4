@@ -19,7 +19,6 @@ public class RequestSaveAction extends Action {
     public Forward execute(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Request request = new Request();
-        req.setCharacterEncoding("UTF-8");
         try {
             request.setId(Long.parseLong(req.getParameter("id")));
         } catch(NumberFormatException e) {

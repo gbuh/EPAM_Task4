@@ -19,7 +19,6 @@ public class UserSaveAction extends Action {
     public Forward execute(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         User user = new User();
-        req.setCharacterEncoding("UTF-8");
         try {
             user.setId(Long.parseLong(req.getParameter("id")));
         } catch(NumberFormatException e) {}
