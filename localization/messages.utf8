@@ -11,8 +11,9 @@ status.execution=Execution
 status.accept=Accept
 
 login.title=Login page
-login.message=Username or password is incorrect. Registration required
-login.form.login=Username
+login.message.incorrect.password=User name or password is incorrect. Registration required
+login.message.access.denied=Access is denied
+login.form.login=User name
 login.form.password=Password
 login.button.login=Log in
 

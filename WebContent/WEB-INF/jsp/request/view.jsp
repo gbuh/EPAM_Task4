@@ -42,5 +42,9 @@
     <c:url var="urlRequestEdit" value="/request/edit.html">
         <c:param name="id" value="${request.id}"/>
     </c:url>
+    <c:if test="${currentUser.role == 'DISPATCHER'}">
     <a href="${urlRequestEdit}" class="edit-button"><fmt:message key="request.view.button.edit"/></a>
+    </c:if>
+    <c:url var="urlRequestList" value="/request/list.html"/>
+    <a href="${urlRequestList}" class="back"><fmt:message key="request.edit.button.cancel"/></a>
 </u:html>

@@ -11,7 +11,8 @@ status.execution=На исполнении
 status.accept=Принята
 
 login.title=Вход в систему
-login.message=Такого пользователя нет. Зарегистрируйтесь, чтобы войти 
+login.message.incorrect.password=Такого пользователя нет. Зарегистрируйтесь, чтобы войти
+login.message.access.denied=Доступ запрещён
 login.form.login=Имя пользователя
 login.form.password=Пароль
 login.button.login=Войти

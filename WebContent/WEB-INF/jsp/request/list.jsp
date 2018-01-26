@@ -32,6 +32,8 @@
             </tr>
         </c:forEach>
     </table>
-    <c:url var="urlRequestEdit" value="/request/edit.html"/>
-    <a href="${urlRequestEdit}" class="add-button"><fmt:message key="request.list.button.add"/></a>
+    <c:if test="${currentUser.role == 'DISPATCHER'}">
+        <c:url var="urlRequestEdit" value="/request/edit.html"/>
+        <a href="${urlRequestEdit}" class="add-button"><fmt:message key="request.list.button.add"/></a>
+    </c:if>
 </u:html>
