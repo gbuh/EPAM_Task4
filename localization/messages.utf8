@@ -10,6 +10,13 @@ status.done=Done
 status.execution=Execution
 status.accept=Accept
 
+model.automobile=Automobile
+model.truck=Truck
+model.bus=Bus
+
+condition.good=Good
+condition.defective=Defective
+
 login.title=Login page
 login.message.incorrect.password=User name or password is incorrect. Registration required
 login.message.access.denied=Access is denied
@@ -64,3 +71,23 @@ request.edit.button.save=Save
 request.edit.button.delete=Delete
 request.edit.button.reset=Reset
 request.edit.button.cancel=Cancel
+
+car.list.title=List of cars
+car.list.table.id=Car number
+car.list.table.model=Auto Model
+car.list.table.places=Number of seats
+car.list.table.carrying=Carrying, ton
+car.list.table.condition=Condition
+car.list.button.add=Add
+
+car.edit.title.edit=Edit car information
+car.edit.title.add=Add new car
+car.edit.form.id=Car number
+car.edit.form.model=Auto Model
+car.edit.form.places=Number of seats
+car.edit.form.carrying=Carrying, ton
+car.edit.form.condition=Condition
+car.edit.button.save=Save
+car.edit.button.delete=Delete
+car.edit.button.reset=Reset
+car.edit.button.cancel=Cancel

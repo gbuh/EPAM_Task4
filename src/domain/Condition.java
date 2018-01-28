@@ -7,8 +7,8 @@ package domain;
  * @author  Igor Lipko
  */
 public enum Condition {
-    GOOD      (0, "Исправный"),
-    DEFECTIVE (1, "Неисправный");
+    GOOD      (0, "condition.good"),
+    DEFECTIVE (1, "condition.defective");
 
     private int index;
     private String name;
@@ -24,5 +24,9 @@ public enum Condition {
 
     public String getName() {
         return name;
+    }
+
+    public Long getId() {
+        return Long.valueOf(ordinal());
     }
 }

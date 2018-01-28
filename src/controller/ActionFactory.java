@@ -5,6 +5,10 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 
+import controller.car.CarDeleteAction;
+import controller.car.CarEditAction;
+import controller.car.CarListAction;
+import controller.car.CarSaveAction;
 import controller.request.RequestDeleteAction;
 import controller.request.RequestViewAction;
 import controller.request.RequestEditAction;
@@ -26,6 +30,10 @@ public class ActionFactory {
         actions.put("/user/edit", UserEditAction.class);
         actions.put("/user/save", UserSaveAction.class);
         actions.put("/user/delete", UserDeleteAction.class);
+        actions.put("/car/list", CarListAction.class);
+        actions.put("/car/edit", CarEditAction.class);
+        actions.put("/car/save", CarSaveAction.class);
+        actions.put("/car/delete", CarDeleteAction.class);
         actions.put("/request/list", RequestListAction.class);
         actions.put("/request/view", RequestViewAction.class);
         actions.put("/request/edit", RequestEditAction.class);

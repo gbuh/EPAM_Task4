@@ -21,8 +21,9 @@ public class MainAction extends Action {
                 case ADMIN:
                     return new Forward("/user/list.html");
                 case DISPATCHER:
-                case DRIVER:
                     return new Forward("/request/list.html");
+                case DRIVER:
+                    return new Forward("/car/list.html");
                 default:
                     return new Forward("/login.html");
                 }

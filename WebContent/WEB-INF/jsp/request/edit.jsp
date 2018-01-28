@@ -51,7 +51,7 @@
         
         <button class="save"><fmt:message key="request.edit.button.save"/></button>
         <c:if test="${not empty request.id}">
-            <c:if test="${not empty request.description}"><c:set var="disabled" value="disabled"/></c:if>
+            <c:if test="${request.status == 'DONE' || request.status == 'EXECUTION'}"><c:set var="disabled" value="disabled"/></c:if>
             <button class="delete" formaction="${urlRequestDelete}" formmethod="post" ${disabled}><fmt:message key="request.edit.button.delete"/></button>
         </c:if>
         <button class="reset" type="reset"><fmt:message key="request.edit.button.reset"/></button>

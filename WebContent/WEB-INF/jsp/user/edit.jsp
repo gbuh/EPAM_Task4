@@ -18,7 +18,9 @@
     <c:url var="urlUserSave" value="/user/save.html"/>
     <c:url var="urlUserDelete" value="/user/delete.html"/>
     <form action="${urlUserSave}" method="post">
-        <c:if test="${not empty user.id}"><input name="id" value="${user.id}" type="hidden"></c:if>
+        <c:if test="${not empty user.id}">
+            <input id="id" name="id" value="${user.id}" type="hidden">
+        </c:if>
         <label for="login"><fmt:message key="user.edit.form.login"/>:</label>
         <input id="login" name="login" value="${user.login}">
         <label for="last_name"><fmt:message key="user.edit.form.lastName"/>:</label>

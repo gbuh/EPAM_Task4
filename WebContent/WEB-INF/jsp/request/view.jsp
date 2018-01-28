@@ -22,7 +22,7 @@
             <th><fmt:message key="request.view.table.driver"/></th>
             <td class="content">${request.driverId}</td>
         </tr>
-                <tr>
+        <tr>
             <th><fmt:message key="request.view.table.carModel"/></th>
             <td class="content"><fmt:message key="${car.model.name}"/></td>
         </tr>

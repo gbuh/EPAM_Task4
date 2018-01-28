@@ -10,6 +10,13 @@ status.done=Выполнена
 status.execution=На исполнении
 status.accept=Принята
 
+model.automobile=Легковой автомобиль
+model.truck=Грузовой автомобиль
+model.bus=Автобус
+
+condition.good=Исправный
+condition.defective=Неисправный
+
 login.title=Вход в систему
 login.message.incorrect.password=Такого пользователя нет. Зарегистрируйтесь, чтобы войти
 login.message.access.denied=Доступ запрещён
@@ -64,3 +71,23 @@ request.edit.button.save=Сохранить
 request.edit.button.delete=Удалить
 request.edit.button.reset=Сброс
 request.edit.button.cancel=Отмена
+
+car.list.title=Список автомобилей
+car.list.table.id=Номер автомобиля
+car.list.table.model=Модель
+car.list.table.places=Кол-во посадочных мест
+car.list.table.carrying=Грузоподьемность, тн
+car.list.table.condition=Состояние
+car.list.button.add=Добавить
+
+car.edit.title.edit=Редактирование данных автомобиля
+car.edit.title.add=Добавление нового автомобиля
+car.edit.form.id=Номер автомобиля
+car.edit.form.model=Модель
+car.edit.form.places=Кол-во посадочных мест
+car.edit.form.carrying=Грузоподьемность, тн
+car.edit.form.condition=Состояние
+car.edit.button.save=Сохранить
+car.edit.button.delete=Удалить
+car.edit.button.reset=Сброс
+car.edit.button.cancel=Отмена

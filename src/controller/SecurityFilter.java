@@ -33,6 +33,8 @@ public class SecurityFilter implements Filter {
         employees.add(Role.DRIVER);
         Set<Role> dispatcher = new HashSet<>();
         dispatcher.add(Role.DISPATCHER);
+        Set<Role> driver = new HashSet<>();
+        driver.add(Role.DRIVER);
 
         permissions.put("/", null);
         permissions.put("/index", null);
@@ -45,11 +47,15 @@ public class SecurityFilter implements Filter {
         permissions.put("/user/save", admin);
         permissions.put("/user/delete", admin);
 
+        permissions.put("/car/list", employees);
         permissions.put("/request/list", employees);
         permissions.put("/request/view", employees);
         permissions.put("/request/edit", dispatcher);
         permissions.put("/request/save", dispatcher);
         permissions.put("/request/delete", dispatcher);
+        permissions.put("/car/edit", driver);
+        permissions.put("/car/save", driver);
+        permissions.put("/car/delete", driver);
     }
 
     @Override

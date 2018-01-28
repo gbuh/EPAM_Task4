@@ -7,9 +7,9 @@ package domain;
  * @author  Igor Lipko
  */
 public enum Model {
-    AUTOMOBILE (0, "Легковой автомобиль"),
-    TRUCK      (1, "Грузовой автомобиль"),
-    BUS        (2, "Автобус");
+    AUTOMOBILE (0, "model.automobile"),
+    TRUCK      (1, "model.truck"),
+    BUS        (2, "model.bus");
 
     private int index;
     private String name;
@@ -25,5 +25,9 @@ public enum Model {
 
     public String getName() {
         return name;
+    }
+
+    public Long getId() {
+        return Long.valueOf(ordinal());
     }
 }

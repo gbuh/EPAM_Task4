@@ -22,12 +22,18 @@ public class RequestSaveAction extends Action {
         try {
             request.setId(Long.parseLong(req.getParameter("id")));
         } catch(NumberFormatException e) {
+            //TODO //////////////////////////////////////////////////////////;
             e.printStackTrace();
             System.out.println("\nERROR\n");
         }
         request.setDescription(req.getParameter("description"));
         try {
             request.setDriverId(Long.parseLong(req.getParameter("driverId")));
+        } catch(NumberFormatException e) {
+            //TODO //////////////////////////////////////////////////////////;
+            System.out.println("\nChoose driver for this request\n");
+        }
+        try {
             request.setStatus(Status.values()[Integer.parseInt(req.getParameter("status"))]);
         } catch(NumberFormatException | ArrayIndexOutOfBoundsException e) {}
         if(request.getDriverId() != null && request.getStatus() != null) {
