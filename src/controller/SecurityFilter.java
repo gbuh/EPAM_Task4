@@ -36,11 +36,13 @@ public class SecurityFilter implements Filter {
         Set<Role> driver = new HashSet<>();
         driver.add(Role.DRIVER);
 
-        permissions.put("/", null);
-        permissions.put("/index", null);
-        permissions.put("/login", null);
+//        permissions.put("/", null);
+//        permissions.put("/index", null);
+//        permissions.put("/login", null);
 
         permissions.put("/logout", all);
+        permissions.put("/password/edit", all);
+        permissions.put("/password/save", all);
 
         permissions.put("/user/list", admin);
         permissions.put("/user/edit", admin);
